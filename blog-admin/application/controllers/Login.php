@@ -37,18 +37,16 @@ class Login extends CI_Controller {
 			$this->session->set_userdata($data);
 			redirect(site_url());
 		}else{
-			$data['keluar']  = '
-							<div class="alert alert-danger alert-dismissible show fade"><strong>Username atau Password Salah!</strong><button class="close" data-dismiss="alert"><span>&times;</span></button></div>';
-			$this->load->view('LoginForm', $data);
+			$data['keluar']  = '<div class="alert alert-danger alert-dismissible show fade"><strong>Username atau Password Salah!</strong><button class="close" data-dismiss="alert"><span>&times;</span></button></div>';
+			$this->load->view('loginForm', $data);
 		}
 	}
 
 	public function logout() {
 		$this->session->unset_userdata(array('username' => '', 'password' => '','logged_in'=>false));
 		$this->session->sess_destroy();
-		$data['keluar']  = '
-							<div class="alert alert-info alert-dismissible show fade">Anda telah keluar<button class="close" data-dismiss="alert"><span>&times;</span></button></div>';
-		$this->load->view('LoginForm', $data);
+		$data['keluar']  = '<div class="alert alert-info alert-dismissible show fade">Anda telah keluar<button class="close" data-dismiss="alert"><span>&times;</span></button></div>';
+		$this->load->view('loginForm', $data);
 	}
 
 	public function lupaPass()
