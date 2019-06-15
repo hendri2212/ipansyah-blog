@@ -33,8 +33,7 @@ class Login extends CI_Controller {
 				'id_user' => $akses->id,
 				'nama' => $akses->nama,
 				'level' => $akses->level,
-        'logged_in' => TRUE
-      );
+        'logged_in' => TRUE);
 			$this->session->set_userdata($data);
 			redirect(site_url());
 		}else{
@@ -44,8 +43,7 @@ class Login extends CI_Controller {
 		}
 	}
 
-	public function logout()
-	{
+	public function logout() {
 		$this->session->unset_userdata(array('username' => '', 'password' => '','logged_in'=>false));
 		$this->session->sess_destroy();
 		$data['keluar']  = '

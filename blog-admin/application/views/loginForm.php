@@ -37,19 +37,15 @@
             <?php
               if (@$keluar) {
                 echo $keluar;
-              }
-             ?>
+              } ?>
             <div class="card card-primary">
-              <div class="card-header"><h4>Login</h4></div>
-
-
               <div class="card-body">
                 <?php echo form_open('login/cekLogin', 'class="needs-validation" novalidate=""') ?>
                   <div class="form-group">
                     <label for="username">Username</label>
                     <div class="input-group">
                       <div class="input-group-prepend">
-                          <div class="input-group-text">@</div>
+                          <!-- <div class="input-group-text">@</div> -->
                         </div>
                       <input type="text" class="form-control" name="username" tabindex="1" required autofocus>
                       <div class="invalid-feedback">
@@ -67,25 +63,15 @@
                   </div>
 
                   <div class="form-group">
-                    <div class="text-small text-center">
-                      <a href="<?php echo base_url('login/lupaPass') ?>">Lupa Password?</a>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
-                      Login
-                    </button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">Login</button>
+                    <a href="<?= base_url(); ?>../index.php" class="btn btn-success btn-lg btn-block" tabindex="5">Halaman Utama</a>
                   </div>
                 </form>
 
               </div>
             </div>
-            <div class="mt-5 text-muted text-center">
-              Belum Punya Akun? <a href="#">Contact Admin</a>
-            </div>
             <div class="simple-footer">
-              Copyright &copy; By <a href="https://ryfazrin.github.io/">Ryfazrin</a> 2019
+              Powered By <a href="https://wa.me/6285746080544?text=Assalamualaikum%2C%20salam%20kenal%20HENDRI%20ARIFIN%2C%20S.Kom%20%F0%9F%98%81">Hendri Arifin, S.Kom</a>
             </div>
           </div>
         </div>

@@ -35,6 +35,9 @@
                         <li>
                             <a href="<?= base_url('blog/semuaPost'); ?>">Semua Post</a>
                         </li>
+                        <li>
+                            <a href="<?= base_url('blog-admin'); ?>">Login</a>
+                        </li>
                     </ul>
                 </div>
             </div>
