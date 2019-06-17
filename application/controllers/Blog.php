@@ -8,9 +8,9 @@ class Blog extends MY_Controller {
     $this->load->model('blog_model');
 	}
 
-	public function index()
-	{
+	public function index() {
 		$data['posts'] = $this->blog_model->getPosts();
+		$data['video'] = $this->blog_model->getVideo();
 		$this->pages('welcome', $data);
 	}
 

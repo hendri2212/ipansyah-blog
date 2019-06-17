@@ -6,16 +6,19 @@
 			parent::__construct();
 		}
 
-    function getPosts()
-    {
+    function getPosts() {
       $this->db->select('*');
       $this->db->from('post');
       $this->db->join('user', 'post.id_penulis = user.id');
       $this->db->limit('7');
-			$this->db->where('status_delete', '0');
+      $this->db->where('status_delete', '0');
       $this->db->order_by('id_post', 'DESC');
       $query = $this->db->get();
-			return $query->result();
+      return $query->result();
+    }
+
+    function getVideo() {
+      return $this->db->get("video")->result();
     }
 
     function getAllPosts()
