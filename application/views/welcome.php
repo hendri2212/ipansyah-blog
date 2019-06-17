@@ -13,7 +13,7 @@
 </header>
 <div class="row">
     <?php foreach ($video as $Dvideo): ?>
-    <div class="col-lg-3">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/9KrKst8IX8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
         <div class="embed-responsive embed-responsive-4by3" data-toggle="modal" data-target="#<?php echo $Dvideo->nama_modal ?>">
             <video class="embed-responsive-item" src="<?= base_url('./assets/video/'.$Dvideo->nama_video) ?>"></video>
