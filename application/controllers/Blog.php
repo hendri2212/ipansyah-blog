@@ -17,6 +17,7 @@ class Blog extends MY_Controller {
 	public function semuaPost()
 	{
 		$data['posts'] = $this->blog_model->getAllPosts();
+		$data['video'] = $this->blog_model->getVideo();
 		$data['semua'] = true;
 		$this->pages('welcome', $data);
 	}
