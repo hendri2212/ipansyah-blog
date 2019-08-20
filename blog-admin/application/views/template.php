@@ -71,8 +71,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="" class="nav-link has-dropdown"><i class="fa fa-newspaper"></i><span>Post</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="<?php echo site_url('/post'); ?>"><i class="fas fa-newspaper"></i> Semua Post</a></li>
+              <li><a class="nav-link" href="<?php echo site_url('/Welcome/tampilkan_video'); ?>"><i class="fas fa-newspaper"></i> Semua Video</a></li>
               <li><a class="nav-link" href="<?php echo site_url('/post/tambah'); ?>"><i class="fas fa-plus"></i> Tambah Baru</a></li>
+              <li><a class="nav-link" href="<?php echo site_url('/Welcome/tambah_video'); ?>"><i class="fas fa-plus"></i> Tambah Video</a></li>
             </ul>
+          </li>
+          <li>
+            <a href="<?php echo site_url('/Welcome/edit_background'); ?>" class="nav-link"><i class="fas fa-fire"></i><span>Ganti Background</span></a>
           </li>
           <?php if ($this->session->userdata('level') == 'administrator'): ?>
             <li><a href="<?php echo site_url('user/'); ?>" class="nav-link"><i class="fas fa-user"></i><span>Data User</span></a></li>

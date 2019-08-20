@@ -1,4 +1,4 @@
-<header class="intro-header" style="background-image: url('<?php echo base_url('assets/img/home-bg.jpg') ?>')">
+<header class="intro-header" style="background-image: url('<?php echo base_url('assets/img/'.$background->nama_background) ?>')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -15,13 +15,13 @@
     <?php foreach ($video as $Dvideo): ?>
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/9KrKst8IX8U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-        <div class="embed-responsive embed-responsive-4by3" data-toggle="modal" data-target="#<?php echo $Dvideo->nama_modal ?>">
+        <div class="embed-responsive embed-responsive-4by3" data-toggle="modal" data-target="#<?php echo $Dvideo->id_video ?>">
             <video class="embed-responsive-item" src="<?= base_url('./assets/video/'.$Dvideo->nama_video) ?>"></video>
         </div>
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="<?php echo $Dvideo->nama_modal ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="<?php echo $Dvideo->id_video ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">

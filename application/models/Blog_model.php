@@ -21,6 +21,10 @@
       return $this->db->get("video")->result();
     }
 
+    function gambar(){
+      return $this->db->get("background")->row();
+    }
+
     function getAllPosts()
     {
       $this->db->select('*');

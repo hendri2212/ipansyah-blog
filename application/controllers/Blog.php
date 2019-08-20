@@ -9,16 +9,18 @@ class Blog extends MY_Controller {
 	}
 
 	public function index() {
-		$data['posts'] = $this->blog_model->getPosts();
-		$data['video'] = $this->blog_model->getVideo();
+		$data['posts'] 		= $this->blog_model->getPosts();
+		$data['video'] 		= $this->blog_model->getVideo();
+		$data['background'] = $this->blog_model->gambar();
 		$this->pages('welcome', $data);
 	}
 
 	public function semuaPost()
 	{
-		$data['posts'] = $this->blog_model->getAllPosts();
-		$data['video'] = $this->blog_model->getVideo();
-		$data['semua'] = true;
+		$data['posts'] 		= $this->blog_model->getAllPosts();
+		$data['video'] 		= $this->blog_model->getVideo();
+		$data['background'] = $this->blog_model->gambar();
+		$data['semua'] 		= true;
 		$this->pages('welcome', $data);
 	}
 

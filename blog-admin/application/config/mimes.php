@@ -179,5 +179,12 @@ return array(
 	'odt'	=>	'application/vnd.oasis.opendocument.text',
 	'odm'	=>	'application/vnd.oasis.opendocument.text-master',
 	'ott'	=>	'application/vnd.oasis.opendocument.text-template',
-	'oth'	=>	'application/vnd.oasis.opendocument.text-web'
+	'oth'	=>	'application/vnd.oasis.opendocument.text-web',
+	'mpeg'  =>  array('video/mpeg', 'video/quicktime'),
+	'mpg'   =>  array('video/mpeg', 'video/quicktime'),
+	'mp4'   =>  array('video/mp4', 'video/quicktime'),
+	'mpe'   =>  array('video/mpeg', 'video/quicktime'),
+	'qt'    =>  'video/quicktime',
+	'mov'   =>  array('video/quicktime', 'video/mp4'),
+	'avi'   =>  array('video/avi', 'video/x-msvideo')
 );
