@@ -40,48 +40,41 @@
 		// 	return $query->result();
     // }
 
-		function getPostUpdate($id)
-		{
-			$this->db->select('*');
-			$this->db->from('post');
-			$this->db->join('user', 'post.id_penulis = user.id');
-			$this->db->where('post.id_post', $id);
-			return $this->db->get()->row();
-		}
+	function getPostUpdate($id) {
+		$this->db->select('*');
+		$this->db->from('post');
+		$this->db->join('user', 'post.id_penulis = user.id');
+		$this->db->where('post.id_post', $id);
+		return $this->db->get()->row();
+	}
 
-    function simpan()
-    {
-      $slug = $this->seo_title($this->input->post('judul'));
-      $dateNow = date('Y-m-d');
-
-			$data = array(
-        "id_penulis" => $this->input->post('id_penulis'),
-				"judul"   => $this->input->post('judul'),
-				"isi" => $this->input->post('isi'),
-				"seo_url"   => $slug,
-        "tgl_publish" => $dateNow
-			);
-
-			$this->db->insert('post', $data);
-			return true;
+    function simpan() {
+		$slug = $this->seo_title($this->input->post('judul'));
+		$dateNow = date('Y-m-d');
+		$data = array(
+			"id_penulis"	=> $this->input->post('id_penulis'),
+			"judul"			=> $this->input->post('judul'),
+			"isi"			=> $this->input->post('isi'),
+			"seo_url"   	=> $slug,
+			"tgl_publish"	=> $dateNow
+		);
+		$this->db->insert('post', $data);
+		return true;
     }
 
-		function update($id)
-		{
-			$slug = $this->seo_title($this->input->post('judul'));
-      $dateNow = date('Y-m-d');
-
-			$data = array(
-        "id_penulis" => $this->input->post('id_penulis'),
-				"judul"   => $this->input->post('judul'),
-				"isi" => $this->input->post('isi'),
-				"seo_url"   => $slug,
-        "tgl_publish" => $dateNow
-			);
-
-			$this->db->where('id_post', $id);
-			$this->db->update('post', $data);
-		}
+	function update($id) {
+		$slug = $this->seo_title($this->input->post('judul'));
+		$dateNow = date('Y-m-d');
+		$data = array(
+			"id_penulis"	=> $this->input->post('id_penulis'),
+			"judul"			=> $this->input->post('judul'),
+			"isi"			=> $this->input->post('isi'),
+			"seo_url"		=> $slug,
+			"tgl_publish"	=> $dateNow
+		);
+		$this->db->where('id_post', $id);
+		$this->db->update('post', $data);
+	}
 
 		function delete($id)
 		{

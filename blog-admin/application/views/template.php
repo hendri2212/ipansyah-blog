@@ -1,51 +1,52 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-  <title>Admin &mdash; Blog</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+        <title>Admin &mdash; Blog</title>
 
-  <!-- General CSS Files -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/bootstrap/css/bootstrap.min.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/fontawesome/css/all.min.css')?>">
+        <!-- General CSS Files -->
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/bootstrap/css/bootstrap.min.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/fontawesome/css/all.min.css')?>">
 
-  <!-- CSS Libraries -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/datatables.min.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/select2/dist/css/select2.min.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/bootstrap-daterangepicker/daterangepicker.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/modules/summernote/summernote-bs4.css')?>">
+        <!-- CSS Libraries -->
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/datatables.min.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/select2/dist/css/select2.min.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/datatables/Select-1.2.4/css/select.bootstrap4.min.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/bootstrap-daterangepicker/daterangepicker.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/modules/summernote/summernote-bs4.css')?>">
 
-  <!-- Template CSS -->
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/css/components.css')?>">
-<!-- Start GA -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <!-- Template CSS -->
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css')?>">
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/components.css')?>">
+        
+        <!-- Start GA -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-  gtag('config', 'UA-94034622-3');
-</script>
-<!-- /END GA --></head>
+            gtag('config', 'UA-94034622-3');
+        </script>
+        <!-- /END GA -->
 
+        <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script> -->
+        <script type="text/javascript" src="<?php echo base_url('./assets/js/nicEdit.js') ?>"></script>
+        <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas)</script>
+    </head>
 <body>
-  <div id="app">
-    <div class="main-wrapper main-wrapper-1">
-      <div class="navbar-bg"></div>
-      <nav class="navbar navbar-expand-lg main-navbar">
-        <ul class="navbar-nav mr-3">
-          <li><a href="#" data-toggle="sidebar" class="nav-link nav-link d-lg-none"><i class="fas fa-bars"></i></a></li>
-          <!-- <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li> -->
-        </ul>
-        <a class="navbar-brand text-right" href="">
-          Admin Blog
-        </a>
-      </nav>
+    <div id="app">
+        <div class="main-wrapper main-wrapper-1">
+            <div class="navbar-bg"></div>
+            <nav class="navbar navbar-expand-lg main-navbar">
+                <ul class="navbar-nav mr-3">
+                    <li><a href="#" data-toggle="sidebar" class="nav-link nav-link d-lg-none"><i class="fas fa-bars"></i></a></li>
+                </ul>
+                <a class="navbar-brand text-right" href="">Admin Blog</a>
+            </nav>
       <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
@@ -64,7 +65,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li>
           <a href="<?php echo site_url(); ?>" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
-
         <!-- level admin -->
         <?php //if ($level->level == 'administrator'): ?>
           <li class="dropdown">

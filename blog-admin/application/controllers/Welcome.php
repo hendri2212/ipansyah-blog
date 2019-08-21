@@ -26,7 +26,8 @@ class Welcome extends ADM_Controller {
 	public function update_background(){
 		$config['upload_path']   = "../assets/img/";
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
-        $config['overwrite']     = FALSE;
+		$config['overwrite']     = FALSE;
+		$config['encrypt_name']  = TRUE;
         $config['remove_spaces'] = TRUE;
 		$config['max_size']		 = '1000000';
 
@@ -66,8 +67,9 @@ class Welcome extends ADM_Controller {
 
     public function simpan_video(){
 		$config['upload_path']   = "../assets/video";
-		$config['allowed_types'] = 'avi|flv|wmv|mp3|mp4|jpg';
-        $config['overwrite']     = FALSE;
+		$config['allowed_types'] = 'avi|flv|wmv|mp3|mp4|jpg|jpeg';
+		$config['overwrite']     = FALSE;
+		$config['encrypt_name']  = TRUE;
         $config['remove_spaces'] = TRUE;
 		$config['max_size']		 = '1000000';
 

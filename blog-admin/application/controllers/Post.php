@@ -27,32 +27,27 @@ class Post extends ADM_Controller {
 		$this->pages('post/postForm');
   }
 
-  public function simpan()
-  {
-    // echo $this->input->post('id_penulis')."<br>".$this->input->post('judul')."<br>".$this->input->post('isi');
-    if ($this->post_model->simpan()) {
-			$data['info']  = '
-      <div class="alert alert-success"><p><strong>Berhasil Membuat Post</strong></p></div>';
-		}else{
-			$data['info']  = '
-					<div class="alert alert-danger"><p><strong> Gagal Membuat Post!</strong></p></div>';
-		}
-		$this->pages('post/postForm', $data);
-  }
+	public function simpan() {
+	// echo $this->input->post('id_penulis')."<br>".$this->input->post('judul')."<br>".$this->input->post('isi');
+	if ($this->post_model->simpan()) {
+		$data['info']  = '<div class="alert alert-success"><p><strong>Berhasil Membuat Post</strong></p></div>';
+	}else{
+		$data['info']  = '
+				<div class="alert alert-danger"><p><strong> Gagal Membuat Post!</strong></p></div>';
+	}
+	$this->pages('post/postForm', $data);
+	}
 
-	public function ubah($id)
-	{
+	public function ubah($id) {
 		$data['postId'] = $this->post_model->getPostUpdate($id);
 		$this->pages('post/postForm', $data);
 	}
 
-	public function update($id)
-	{
+	public function update($id) {
 		$this->post_model->update($id);
 
-		$data['postId'] = $this->post_model->getPostUpdate($id);
-		$data['info']  = '
-					<div class="alert alert-success"><p><strong>Update id post '.$id.' Berhasil</strong></p></div>';
+		$data['postId']	= $this->post_model->getPostUpdate($id);
+		$data['info']	= '<div class="alert alert-success"><p><strong>Update id post '.$id.' Berhasil</strong></p></div>';
 		$this->pages('post/postForm', $data);
 	}
 
@@ -60,7 +55,7 @@ class Post extends ADM_Controller {
 	{
 		// jika level bukan administrator maka kembalikan ke halaman utama post
     if ($this->session->userdata('level') != 'administrator') {
-      redirect(base_url('/post'));
+		redirect(base_url('/post'));
     }
 		$this->post_model->delete($id);
 		redirect(site_url('post?status=deleted'));
